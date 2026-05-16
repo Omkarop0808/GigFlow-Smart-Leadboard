@@ -13,7 +13,7 @@ const badgeVariants = cva(
         website: "bg-blue-500/20 text-blue-200 border border-blue-500/30",
         instagram: "bg-pink-500/20 text-pink-200 border border-pink-500/30",
         referral: "bg-purple-500/20 text-purple-200 border border-purple-500/30",
-        default: "bg-white/10 text-zinc-300 border border-white/20",
+        default: "bg-foreground/10 text-muted border border-card-border/50",
       },
     },
     defaultVariants: { variant: "default" },

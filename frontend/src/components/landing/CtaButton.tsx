@@ -11,9 +11,9 @@ interface CtaButtonProps {
 
 export function CtaButton({ to, children, variant = "primary", className }: CtaButtonProps) {
   const styles = {
-    primary: "bg-zinc-900 text-white border border-white/10 hover:border-primary/50",
-    secondary: "bg-transparent text-white border border-white/20 hover:bg-white/5",
-    white: "bg-white text-black hover:bg-zinc-200",
+    primary: "bg-zinc-900 text-foreground border border-card-border hover:border-primary/50",
+    secondary: "bg-transparent text-foreground border border-card-border/50 hover:bg-foreground/5",
+    white: "bg-foreground text-background hover:bg-zinc-200",
   };
 
   return (
@@ -27,7 +27,7 @@ export function CtaButton({ to, children, variant = "primary", className }: CtaB
         )}
       >
         {variant !== "white" && (
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-xs font-bold text-black">
+          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-xs font-bold text-background">
             »
           </span>
         )}

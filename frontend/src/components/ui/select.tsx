@@ -12,7 +12,7 @@ const SelectTrigger = ({
 }: React.ComponentProps<typeof SelectPrimitive.Trigger>) => (
   <SelectPrimitive.Trigger
     className={cn(
-      "flex h-11 w-full items-center justify-between rounded-xl border border-white/10 bg-white/5 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/60",
+      "flex h-11 w-full items-center justify-between rounded-xl border border-card-border bg-foreground/5 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/60",
       className
     )}
     {...props}
@@ -32,7 +32,7 @@ const SelectContent = ({
   <SelectPrimitive.Portal>
     <SelectPrimitive.Content
       className={cn(
-        "z-50 overflow-hidden rounded-xl border border-white/10 bg-zinc-950 p-1 shadow-xl",
+        "z-50 overflow-hidden rounded-xl border border-card-border bg-zinc-950 p-1 shadow-xl",
         className
       )}
       {...props}
@@ -49,7 +49,7 @@ const SelectItem = ({
 }: React.ComponentProps<typeof SelectPrimitive.Item>) => (
   <SelectPrimitive.Item
     className={cn(
-      "relative flex cursor-pointer select-none items-center rounded-lg py-2 pl-8 pr-2 text-sm outline-none focus:bg-white/10 data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "relative flex cursor-pointer select-none items-center rounded-lg py-2 pl-8 pr-2 text-sm outline-none focus:bg-foreground/10 data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className
     )}
     {...props}

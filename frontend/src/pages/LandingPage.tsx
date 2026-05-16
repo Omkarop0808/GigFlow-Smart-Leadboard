@@ -8,9 +8,9 @@ import { ServiceCard } from "@/components/landing/ServiceCard";
 import { useAuth } from "@/context/AuthContext";
 
 const floatingBadges = [
-  { label: "Agency", className: "bg-primary/90 text-black" },
-  { label: "Expert", className: "bg-white text-black" },
-  { label: "Innovative", className: "bg-accent/90 text-black" },
+  { label: "Agency", className: "bg-primary/90 text-background" },
+  { label: "Expert", className: "bg-foreground text-background" },
+  { label: "Innovative", className: "bg-accent/90 text-background" },
 ];
 
 const services = [
@@ -50,7 +50,7 @@ export function LandingPage() {
   if (isAuthenticated) return <Navigate to="/dashboard" replace />;
 
   return (
-    <motion.div className="relative min-h-screen overflow-x-hidden bg-black text-white">
+    <motion.div className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
       <BackgroundScene />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center_top,_rgba(255,140,0,0.08),_transparent_55%)]" />
       <LandingNavbar />
@@ -89,12 +89,12 @@ export function LandingPage() {
           >
             Designing{" "}
             <span className="text-gradient">Digital</span>{" "}
-            <span className="font-[family-name:var(--font-display)] italic font-normal text-white">
+            <span className="font-[family-name:var(--font-display)] italic font-normal text-foreground">
               pipelines
             </span>
           </motion.h1>
           <motion.p
-            className="mx-auto mt-6 max-w-2xl text-base text-zinc-400 sm:text-lg"
+            className="mx-auto mt-6 max-w-2xl text-base text-muted sm:text-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -129,7 +129,7 @@ export function LandingPage() {
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs uppercase tracking-widest text-primary">About Gigflow</p>
           <motion.h2
-            className="mt-4 text-2xl font-medium leading-relaxed text-zinc-300 sm:text-3xl"
+            className="mt-4 text-2xl font-medium leading-relaxed text-muted sm:text-3xl"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -146,7 +146,7 @@ export function LandingPage() {
       </section>
 
       {/* Features */}
-      <section id="features" className="border-y border-white/5 bg-white/[0.02] px-4 py-20 lg:px-8">
+      <section id="features" className="border-y border-card-border bg-foreground/[0.02] px-4 py-20 lg:px-8">
         <motion.div
           className="mx-auto max-w-7xl"
           initial={{ opacity: 0 }}
@@ -169,11 +169,11 @@ export function LandingPage() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
               >
-                <motion.div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-primary/10">
+                <motion.div className="flex h-10 w-10 items-center justify-center rounded-xl border border-card-border bg-primary/10">
                   <Icon className="h-5 w-5 text-primary" />
                 </motion.div>
-                <h3 className="mt-4 font-semibold text-white">{title}</h3>
-                <p className="mt-2 text-sm text-zinc-400">{desc}</p>
+                <h3 className="mt-4 font-semibold text-foreground">{title}</h3>
+                <p className="mt-2 text-sm text-muted">{desc}</p>
               </motion.div>
             ))}
           </div>
@@ -208,7 +208,7 @@ export function LandingPage() {
       {/* Final CTA */}
       <section className="px-4 pb-24 pt-8 lg:px-8">
         <motion.div
-          className="mx-auto max-w-4xl rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/10 via-zinc-950 to-black p-10 text-center sm:p-14"
+          className="mx-auto max-w-4xl rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/10 via-background to-card p-10 text-center sm:p-14"
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -216,7 +216,7 @@ export function LandingPage() {
           <h2 className="text-3xl font-bold sm:text-4xl">
             Ready to manage leads like a pro?
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-zinc-400">
+          <p className="mx-auto mt-4 max-w-xl text-muted">
             Sign in with the seeded admin account or register as sales. Your pipeline
             awaits.
           </p>
@@ -229,7 +229,7 @@ export function LandingPage() {
         </motion.div>
       </section>
 
-      <footer className="border-t border-white/5 px-4 py-8 text-center text-sm text-zinc-500">
+      <footer className="border-t border-card-border px-4 py-8 text-center text-sm text-zinc-500">
         © {new Date().getFullYear()} Gigflow · Smart Leads Dashboard · MERN Assignment
       </footer>
     </motion.div>

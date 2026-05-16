@@ -6,7 +6,7 @@ const Label = ({
   ...props
 }: React.ComponentProps<typeof LabelPrimitive.Root>) => (
   <LabelPrimitive.Root
-    className={cn("text-sm font-medium text-zinc-300", className)}
+    className={cn("text-sm font-medium text-muted", className)}
     {...props}
   />
 );

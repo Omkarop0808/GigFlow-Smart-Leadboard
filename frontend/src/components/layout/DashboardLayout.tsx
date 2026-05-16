@@ -24,14 +24,14 @@ export function DashboardLayout() {
     >
       <BackgroundScene />
       <motion.div
-        className="absolute inset-0 -z-10 bg-black/80 light:bg-white/90"
+        className="absolute inset-0 -z-10 bg-background/80 light:bg-foreground/90"
         aria-hidden
       />
 
       <div className="flex min-h-screen">
-        <aside className="hidden w-64 flex-col border-r border-white/10 bg-black/60 p-6 backdrop-blur-xl lg:flex">
+        <aside className="hidden w-64 flex-col border-r border-card-border bg-card/60 p-6 backdrop-blur-xl lg:flex">
           <Link to="/dashboard" className="mb-10 block">
-            <span className="text-2xl font-bold tracking-tight text-white">
+            <span className="text-2xl font-bold tracking-tight text-foreground">
               Gig<span className="font-[family-name:var(--font-display)] italic text-primary">flow</span>
             </span>
             <p className="mt-1 text-xs text-muted">Smart Leads Dashboard</p>
@@ -48,7 +48,7 @@ export function DashboardLayout() {
                     "flex items-center gap-3 rounded-xl px-4 py-3 text-sm transition-colors",
                     isActive
                       ? "bg-primary/15 text-primary"
-                      : "text-zinc-400 hover:bg-white/5 hover:text-white"
+                      : "text-muted hover:bg-foreground/5 hover:text-foreground"
                   )
                 }
               >
@@ -59,10 +59,10 @@ export function DashboardLayout() {
           </nav>
 
           <motion.div
-            className="mt-auto space-y-3 rounded-xl border border-white/10 bg-white/5 p-4"
+            className="mt-auto space-y-3 rounded-xl border border-card-border bg-foreground/5 p-4"
             whileHover={{ scale: 1.01 }}
           >
-            <p className="text-sm font-medium text-white">{user?.name}</p>
+            <p className="text-sm font-medium text-foreground">{user?.name}</p>
             <p className="text-xs text-muted">{user?.email}</p>
             <span className="inline-block rounded-full bg-primary/20 px-2 py-0.5 text-xs capitalize text-primary">
               {user?.role}
@@ -71,9 +71,9 @@ export function DashboardLayout() {
         </aside>
 
         <motion.div className="flex flex-1 flex-col">
-          <header className="flex items-center justify-between border-b border-white/10 bg-black/40 px-4 py-4 backdrop-blur-md lg:px-8">
+          <header className="flex items-center justify-between border-b border-card-border bg-card/40 px-4 py-4 backdrop-blur-md lg:px-8">
             <motion.h1
-              className="text-lg font-semibold text-white lg:text-2xl"
+              className="text-lg font-semibold text-foreground lg:text-2xl"
               initial={{ x: -12, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
             >

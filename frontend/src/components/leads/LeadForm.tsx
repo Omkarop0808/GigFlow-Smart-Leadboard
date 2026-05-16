@@ -109,7 +109,7 @@ export function LeadForm({
 
       <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
         <Button type="submit" disabled={isSubmitting} className="w-full sm:w-auto">
-          <span className="mr-2 flex h-6 w-6 items-center justify-center rounded-full bg-black/20 text-xs">
+          <span className="mr-2 flex h-6 w-6 items-center justify-center rounded-full bg-foreground/20 text-xs">
             »
           </span>
           {isSubmitting ? "Saving..." : submitLabel}

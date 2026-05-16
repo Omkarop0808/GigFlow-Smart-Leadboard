@@ -29,12 +29,12 @@ export function LeadsTable({ leads, isLoading, onDelete }: LeadsTableProps) {
   if (leads.length === 0) {
     return (
       <motion.div
-        className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-white/10 py-20 text-center"
+        className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-card-border py-20 text-center"
         initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
       >
         <div className="mb-4 h-32 w-32 rounded-full bg-[radial-gradient(circle,_rgba(255,140,0,0.2),_transparent_70%)]" />
-        <h3 className="text-xl font-semibold text-white">No leads found</h3>
+        <h3 className="text-xl font-semibold text-foreground">No leads found</h3>
         <p className="mt-2 max-w-sm text-sm text-muted">
           Adjust your filters or create a new lead to get started.
         </p>
@@ -44,15 +44,15 @@ export function LeadsTable({ leads, isLoading, onDelete }: LeadsTableProps) {
 
   return (
     <motion.div
-      className="overflow-x-auto rounded-2xl border border-white/10"
+      className="overflow-x-auto rounded-2xl border border-card-border"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
       <table className="w-full min-w-[640px] text-left text-sm">
-        <thead className="border-b border-white/10 bg-white/[0.03]">
+        <thead className="border-b border-card-border bg-foreground/[0.03]">
           <tr>
             {["Name", "Email", "Status", "Source", "Created", "Actions"].map((h) => (
-              <th key={h} className="px-4 py-3 font-medium text-zinc-400">
+              <th key={h} className="px-4 py-3 font-medium text-muted">
                 {h}
               </th>
             ))}
@@ -62,12 +62,12 @@ export function LeadsTable({ leads, isLoading, onDelete }: LeadsTableProps) {
           {leads.map((lead, i) => (
             <motion.tr
               key={lead._id}
-              className="border-b border-white/5 hover:bg-white/[0.02]"
+              className="border-b border-card-border hover:bg-foreground/[0.02]"
               initial={{ opacity: 0, x: -8 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.03 }}
             >
-              <td className="px-4 py-3 font-medium text-white">{lead.name}</td>
+              <td className="px-4 py-3 font-medium text-foreground">{lead.name}</td>
               <td className="px-4 py-3 text-muted">{lead.email}</td>
               <td className="px-4 py-3">
                 <Badge variant={statusToBadgeVariant(lead.status)}>{lead.status}</Badge>

@@ -87,7 +87,7 @@ export function DashboardPage() {
       <div className="flex flex-wrap gap-3">
         <Button asChild>
           <Link to="/dashboard/leads/new" className="gap-2">
-            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-black/20 text-xs">
+            <span className="flex h-6 w-6 items-center justify-center rounded-full bg-foreground/20 text-xs">
               »
             </span>
             <Plus className="h-4 w-4" />

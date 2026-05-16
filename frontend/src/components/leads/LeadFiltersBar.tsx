@@ -18,7 +18,7 @@ interface LeadFiltersBarProps {
 export function LeadFiltersBar({ filters, onChange }: LeadFiltersBarProps) {
   return (
     <motion.div
-      className="grid gap-4 rounded-2xl border border-white/10 bg-white/[0.02] p-4 md:grid-cols-2 lg:grid-cols-5"
+      className="grid gap-4 rounded-2xl border border-card-border bg-foreground/[0.02] p-4 md:grid-cols-2 lg:grid-cols-5"
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
     >

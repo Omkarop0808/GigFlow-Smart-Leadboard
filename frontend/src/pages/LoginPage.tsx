@@ -45,14 +45,14 @@ export function LoginPage() {
     <div className="relative flex min-h-screen items-center justify-center p-4">
       <BackgroundScene />
       <motion.div
-        className="w-full max-w-md rounded-3xl border border-white/10 bg-black/70 p-8 backdrop-blur-xl"
+        className="w-full max-w-md rounded-3xl border border-card-border bg-card/70 p-8 backdrop-blur-xl"
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
       >
         <Link to="/" className="text-xs text-zinc-500 hover:text-primary">
           ← Back to home
         </Link>
-        <h1 className="mt-4 text-3xl font-bold text-white">
+        <h1 className="mt-4 text-3xl font-bold text-foreground">
           Welcome <span className="font-[family-name:var(--font-display)] italic text-primary">back</span>
         </h1>
         <p className="mt-2 text-sm text-muted">Sign in to manage your leads</p>

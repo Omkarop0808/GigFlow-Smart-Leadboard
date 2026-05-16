@@ -77,7 +77,7 @@ export function LeadDetailPage() {
             Created {new Date(lead.createdAt).toLocaleString()}
           </p>
           {lead.createdBy && (
-            <p className="text-sm text-zinc-400">
+            <p className="text-sm text-muted">
               By {lead.createdBy.name} ({lead.createdBy.email})
             </p>
           )}
