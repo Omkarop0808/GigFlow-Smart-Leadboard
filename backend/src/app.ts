@@ -6,7 +6,12 @@ import { errorHandler } from "./middleware/errorHandler";
 import authRoutes from "./routes/authRoutes";
 import leadRoutes from "./routes/leadRoutes";
 
+import { connectDatabase, runSeeds } from "./config/database";
+
 const app = express();
+
+// Initialize database connection for Vercel Serverless
+connectDatabase().then(() => runSeeds()).catch(console.error);
 
 app.use(
   cors({
