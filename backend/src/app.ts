@@ -25,9 +25,16 @@ app.use(morgan(env.isProduction ? "combined" : "dev"));
 app.get("/api/health", (_req, res) => {
   res.json({ success: true, message: "Smart Leads API is running" });
 });
+app.get("/health", (_req, res) => {
+  res.json({ success: true, message: "Smart Leads API is running" });
+});
 
 app.use("/api/auth", authRoutes);
 app.use("/api/leads", leadRoutes);
+
+// Fallback mounts for Vercel's routePrefix stripping
+app.use("/auth", authRoutes);
+app.use("/leads", leadRoutes);
 
 app.use((_req, res) => {
   res.status(404).json({ success: false, message: "Route not found" });
